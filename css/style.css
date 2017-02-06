@@ -1,0 +1,18 @@
+.card {
+    border: 1px solid blue;
+    width:50px;
+    display: inline-block;
+    background-color: black;
+    color:white;
+    text-align: center;
+    font-size: 25px;
+    vertical-align: bottom;
+    padding: 1em;
+    border-radius: 5px;
+    margin: 1em;
+    height: 75px;
+}
+section {
+    width:35%;
+    margin: auto;
+}
