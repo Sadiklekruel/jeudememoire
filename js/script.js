@@ -1,11 +1,14 @@
 
 var boardElement = document.getElementById("board");
 var cardsNumber = 12;
+var stockCard1 = null;
+var stockCard2 = null;
 
 for (var i = 0; i < cardsNumber/2; i++){
     for (var j = 0; j < 2; j++) {
         var cardElement = document.createElement ("div");
         var cacheElement = document.createElement ("div");
+
 
         cardElement.innerHTML = i;
 
@@ -17,16 +20,29 @@ for (var i = 0; i < cardsNumber/2; i++){
 
         cacheElement.addEventListener("click",function(){
 
-            if (this.style.display == "none"){
-                console.log("je montre");
-                this.style.display = "block";
+            if (stockCard1 == null && stockCard2 == null){
+                stockCard1 = this
 
             }
-            else {
-                console.log("je cache");
-                this.style.display = "none";
+
+            if (stockCard1!= null && stockCard2 == null){
+                stockCard2 = this
             }
+
+            if (stockCard1 != null && stockCard2 != null){
+
+
             
+                stockCard1 = this
+                stockCard2 = null
+        }
+
+                this.style.display = "none";
+
+
+
+
+
         });
     }
 }
